@@ -274,5 +274,39 @@ git pull [remote name] [branch name]
 
 学习案例——远程仓库操作
 ```
+# 将本地仓库推送到远程仓库 [git_test01]
+# 添加远程仓库
+git remote add origin git@github.com/**/**.git
+# 将 master 分支推送到远程仓库，并与远程仓库的 master 分支绑定关联关系
+git push --set-upstream origin master
+
+# 将远程仓库克隆到本地 [git test02]
+git clone git@github.com/**/**.git git_test01
+# 以精简的方式显示提交记录
+git-log
+
+# 将本地修改推送到远程仓库 [git_test01]
+# 创建文件 file03.txt
+# 将修改加入暂存区并提交到仓库，提交记录内容为：add file03
+git add .
+git commit -m "add file03"
+# 将 master 分支的修改推送到远程仓库
+git push origin master
+
+# 将远程仓库的修改更新到本地 [git_test02]
+# 将远程仓库修改再拉取到本地
+git pull
+# 以精简的方式显示提交记录
+git-log
+# 查看文件变化（目录下也出现了 file03.txt）
 
 ```
+
+**<font color="red">几条铁令</font>**
+1. 切换分支前先提交本地的修改
+2. 代码及时提交，提交过了就不会丢
+3. 遇到任何问题都不要删除文件目录
+
+
+## Reference:
+PyCharm 配置 Git：[Click](https://www.bilibili.com/video/BV1MU4y1Y7h5/?p=23&spm_id_from=pageDriver&vd_source=6164de2a185f949293fb3064a50fdb40)
